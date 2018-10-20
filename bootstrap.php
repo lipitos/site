@@ -1,11 +1,13 @@
 <?php
 
-$path = $_SERVER['PATH_INFO'] ?? '/';
+require __DIR__ . '/src/error_handler.php';
+require __DIR__ . '/src/resolve_route.php';
+require __DIR__ . '/src/render.php';
+require __DIR__ . '/src/connection.php';
 
-if($path == '/'){
-	require __DIR__ . '/site/routes.php';
-} else if($path == '/admin'){
+
+if(resolve('/admin/?(.*)')){
 	require __DIR__ . '/admin/routes.php';
-} else{
-	echo "Página não encontrada";
-}
+}elseif(resolve('/(.*)')){
+	require __DIR__ . '/site/routes.php';
+} 
