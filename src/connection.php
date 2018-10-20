@@ -1,7 +1,7 @@
 <?php
 mysqli_report(MYSQLI_REPORT_ERROR);
 
-$conn = new mysqli('localhost', 'root', '', 'teste');
+$conn = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
 /*try {
     $conexao = new PDO("mysql:host=localhost;dbname=test", "root", "");
