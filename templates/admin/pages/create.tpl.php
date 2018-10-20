@@ -15,7 +15,8 @@
 		</div>
 	</div>
 	<div class="form-group">
-		//editor de texto
+		<input id="pagesBody" type="hidden" name="body">
+		<trix-editor input="pagesBody"></trix-editor>
 	</div>
 	<button type="submit" class="btn btn-outline-success">Salvar</button>
 </form>
