@@ -12,7 +12,8 @@
 		<tr>
 			<td>1</td>
 			<td><a href="/admin/pages/1">Página Inicial</a></td>
-			<td class="text-right"><a href="/admin/pages/1" class="btn btn-outline-primary btn-sm">Ver</a></td>
+			<td class="text-right"><a href="/admin/pages/1" class="btn btn-outline-primary btn-sm">Ver</a>
+			<a href="/admin/pages/1/edit" class="btn btn-outline-primary btn-sm">Editar</a></td>			
 		</tr>
 	</tbody>
 </table>
