@@ -26,7 +26,8 @@ if(resolve('/admin/pages')){
 		$pages_edit($params[1]);
 		return header('location: /admin/pages/' . $params[1]);
 	}
-	render('admin/pages/edit', 'admin');
+	$page = $pages_one($params[1]);
+	render('admin/pages/edit', 'admin', ['page' => $page]);
 
 }else if($params = resolve('/admin/pages/(\d+)/delete')){
 	//deletar uma página
