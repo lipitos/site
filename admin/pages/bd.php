@@ -10,8 +10,8 @@ function pages_get_data($redirectOnError){
 	$url = filter_input(INPUT_POST, 'url');
 	$body = filter_input(INPUT_POST, 'body');*/
 
-	if((is_null($title)) || (is_null($url))){
-		flash('Informe os campos título e url', 'error');
+	if((is_null($title)) || ($title === '')){
+		flash('Informe o título', 'error');
 		header('location:' . $redirectOnError);
 		die();
 	}

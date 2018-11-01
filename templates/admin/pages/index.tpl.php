@@ -16,7 +16,7 @@
 			<td class="text-right">
 			<a href="/admin/pages/<?php echo $page['id']; ?>" class="btn btn-outline-primary btn-sm">Ver</a>
 			<a href="/admin/pages/<?php echo $page['id']; ?>/edit" class="btn btn-outline-info btn-sm">Editar</a>
-			<a href="/admin/pages/<?php echo $page['id']; ?>/delete" class="btn btn-outline-danger confirm btn-sm">Deletar</a>
+			<a href="/admin/pages/<?php echo $page['id']; ?>/delete" class="btn btn-outline-danger btn-sm confirm">Deletar</a>
 			</td>			
 		</tr>
 		<?php endforeach; ?>

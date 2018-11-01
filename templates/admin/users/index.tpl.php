@@ -10,16 +10,18 @@
 		</tr>
 	</thead>
 	<tbody>
+		<?php foreach ($data['users'] as $user): ?> 
 		<tr>
-			<td>1</td>
-			<td>teste</td>
-			<td>teste@teste.com</td>
+			<td><?php echo $user['id']; ?></td>
+			<td><?php echo $user['login']; ?></td>
+			<td><?php echo $user['email']; ?></td>
 			<td><a href="#"></a></td>
 			<td class="text-right">
-			<a href="/admin/users/1" class="btn btn-outline-primary btn-sm">Ver</a>
-			<a href="/admin/users/1/edit" class="btn btn-outline-info btn-sm">Editar</a>
-			<a href="/admin/users/1/delete" class="btn btn-outline-danger confirm btn-sm">Deletar</a></td>
+			<a href="/admin/users/<?php echo $user['id']; ?>" class="btn btn-outline-primary btn-sm">Ver</a>
+			<a href="/admin/users/<?php echo $user['id']; ?>/edit" class="btn btn-outline-info btn-sm">Editar</a>
+			<a href="/admin/users/<?php echo $user['id']; ?>/delete" class="btn btn-outline-danger btn-sm confirm">Deletar</a></td>
 		</tr>
+	<?php endforeach; ?>
 	</tbody>
 </table>
 

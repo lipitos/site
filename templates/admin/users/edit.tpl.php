@@ -3,12 +3,12 @@
 <form action="" method="POST">
 	<div class="form-group">
 		<label for="usersLogin">Login</label>
-		<input name="login" id="usersLogin" type="text" class="form-control" value="felipe">
+		<input name="login" id="usersLogin" type="text" class="form-control" value="<?php echo $data['user']['login']; ?>">
 	</div>
 	<div class="form-group">
 		<label for="usersEmail">E-mail</label>
 		<div class="input-group">
-		<input name="email" id="usersEmail" type="email" class="form-control" value="felipe.com">
+		<input name="email" id="usersEmail" type="email" class="form-control" value="<?php echo $data['user']['email']; ?>">
 		</div>
 	</div>
 	<div class="form-group">
@@ -20,4 +20,4 @@
 	<button type="submit" class="btn btn-outline-success">Salvar</button>
 </form>
 <hr>
-<a href="/admin/users/1" class="btn btn-outline-secondary">Voltar</a>
+<a href="/admin/users/<?php echo $data['user']['id']; ?>" class="btn btn-outline-secondary">Voltar</a>

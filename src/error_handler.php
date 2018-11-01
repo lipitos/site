@@ -1,9 +1,17 @@
 <?php
 
-function setInternalServerError($errno, $errstr, $errfile, $errline){
+function setInternalServerError($errno = null, $errstr = null, $errfile = null, $errline = null){
 
 	if(!DEBUG){
 		exit;
+	}
+
+	if(is_object($errno)){
+		$err = $errno;
+		$errno = $err->getCode();
+		$errstr = $err->getMessage();
+		$errfile = $err->getFile();
+		$errline = $err->getLine();
 	}
 
 	echo '<h1>Error:</h1>';
@@ -15,12 +23,15 @@ function setInternalServerError($errno, $errstr, $errfile, $errline){
 			break;
 		case E_USER_WARNING:
 			echo '<strong>WARNING</strong> ['. $errno .'] ' . $errstr . "<br>\n";
+			echo 'On line ' . $errline . ' in file ' . $errfile;				
 			break;
 		case E_USER_NOTICE:
 			echo '<strong>NOTICE</strong> ['. $errno .'] ' . $errstr . "<br>\n";
+			echo 'On line ' . $errline . ' in file ' . $errfile;				
 			break;							
 		default:
 			echo '<strong>Unknow error type</strong> ['. $errno .'] ' . $errstr . "<br>\n";
+			echo 'Error on line ' . $errline . ' in file ' . $errfile;			
 			break;
 	}
 	echo '</span>';
