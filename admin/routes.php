@@ -1,7 +1,12 @@
 <?php
 
+auth_protection();
+
 if(resolve('/admin')){
 	render('admin/home', 'admin');
+
+}else if(resolve('/admin/auth.*')){
+	include __DIR__ . '/auth/routes.php';
 
 }else if(resolve('/admin/pages.*')){
 	include __DIR__ . '/pages/routes.php';

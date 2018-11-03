@@ -57,8 +57,6 @@ $users_create = function() use ($conn){
 $users_edit = function($id) use ($conn){
 	$data = users_get_data('/admin/users/'.$id.'/edit');
 
-	flash(''. $data['login'] . ', '. $data['email'] . ', '. $data['password'] . ', '. $id . '', 'warning');
-
 	if($data['password']){
 		$data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 		$sql = 'UPDATE users SET login=?, email=?, password=?, updated=NOW() where id = ?';
@@ -70,7 +68,6 @@ $users_edit = function($id) use ($conn){
 		$stmt->bind_param('ssi', $data['login'], $data['email'], $id);
 	}
 
-	flash(''. $sql .'', 'warning');
 	flash('Usuário atualizado', 'success');
 
 	return $stmt->execute();
