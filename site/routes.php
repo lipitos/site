@@ -1,10 +1,19 @@
 <?php
 
+require __DIR__ . '/../admin/pages/bd.php';
+
 if(resolve('/')){
-	render('site/home', 'site');
+	$pages = $pages_all();
+	render('site/home', 'site', compact('pages'));
 }else if(resolve('/contato')){
-	render('site/contato', 'site');
-}else{
-	http_response_code(404);
-	echo "Página não encontrada";
+	$pages = $pages_all();
+	render('site/contato', 'site', compact('pages'));
+}else if($params = resolve('/(.*)')){
+	$pages = $pages_all();
+	foreach ($pages as $page){
+		if($page['url'] == $params[1]){
+			break;
+		}
+	}
+	render('site/page', 'site', compact('pages', 'page'));
 }

@@ -1,3 +1,1 @@
-<h3>Administração de Páginas</h3>
-
-<a href="/contato">Ir para Contato</a>
+<h3>Olá</h3>
