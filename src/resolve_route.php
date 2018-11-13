@@ -3,6 +3,10 @@
 function resolve($route){
 	$path = $_SERVER['PATH_INFO'] ?? '/';
 
+	if(strlen($path)>1){
+		$path = rtrim($path, '/');
+	}
+
 	/* 	/^ marca o ínicio da expressão
 		/([a-z]) sequencia de a-z minúscula
 		+ indica que deve ser 1 ou mais caracteres
